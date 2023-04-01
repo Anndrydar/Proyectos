@@ -1,0 +1,28 @@
+<div class="container-fluid py-4">
+    <div class="card text-center">
+        <div class="card-header">
+         Torneos
+        </div>
+        <div class="card-body">
+          <a href="/crear-torneo" class="btn btn-primary">Gestionarlos</a>
+        </div>
+        <div class="card-header">
+          <h5 class="card-title">Conoce todos los torneos que se juegan</h5>
+        </div>
+      </div>
+</div>
+
+
+
+<div class="row my-4 text-center">
+  <div *ngFor="let Torn of torneos"class="col-md-4 p-4">
+    <div class="card bg-light card-project">
+      <div class="container-fluid py-2">
+      <div class="card-body">
+        <h2>Torneo realizado</h2>
+        <p>{{Torn.descripcion}}</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

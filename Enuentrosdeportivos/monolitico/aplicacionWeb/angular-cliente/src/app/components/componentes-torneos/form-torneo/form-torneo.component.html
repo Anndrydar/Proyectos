@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-sm-4 offset-sm-4">
+   <div class="card card-body">
+  <form (submit)="grabarTorneo()">
+    <div class="form-group">
+        <input type="text" name="descripcion" [(ngModel)]="torneo.descripcion"  class="form-control" placeholder="describa el torneo" autofocus>
+</div>
+<button type="submit" class="btn btn-primary btn-block">
+    Grabar
+  </button>
+  </form>
+   </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid py-4">
+    <div class="container-fluid py-4">
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">_Id</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Version</th>
+          <th scope="col">Borrar</th>
+          <th scope="col">Cambiar</th>
+          <th scope="col">Respaldar</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let torn of torneos">
+          <td>{{torn._id}}</td>
+          <td>{{torn.descripcion}}</td>
+          <td>{{torn.__v}}</td>
+          <td><button (click)="eliminarTorneo(torn._id,torn.descripcion)" class="btn btn-danger">
+            Delete
+          </button></td>
+          <td><button [routerLink]="['/torneo/edit', torn._id]" class="btn btn-info">
+            Edit
+          </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+
+
+
+

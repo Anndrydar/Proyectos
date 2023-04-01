@@ -1,0 +1,94 @@
+<div class="container-fluid py-4">
+    <div class="container-fluid py-4">
+        <h3 class="text-center">¡¡Recupera equipos que hayas salvado!!</h3>
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Equipo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Serie</th>
+          <th scope="col">Recuperar</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let Equi of equipos">
+          <td>{{Equi.nombre}}</td>
+          <td>{{Equi.descripcion}}</td>
+          <td>{{Equi.serie}}</td>
+          <td><button (click)="submitRecupera(Equi._id, Equi.nombre,Equi.descripcion, Equi.serie)" class="btn btn-success btn-block">
+           Recuperar 
+          </button></td>
+          <td><button (click)="eliminaPermanente1(Equi._id)" class="btn btn-danger btn-block">
+            Desaparecer
+           </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+
+
+  <div class="container-fluid py-4">
+    <div class="container-fluid py-4">
+      <h3 class="text-center">¡¡Recupera torneos que hayas salvado!!</h3>
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Recuperar</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let torn of torneos">
+          <td>{{torn.descripcion}}</td>
+          <td><button (click)="submitRecupera2(torn._id,torn.descripcion)" class="btn btn-success btn-block">
+            Recuperar
+          </button></td>
+          <td><button (click)="eliminaPermanente2(torn._id)" class="btn btn-danger btn-block">
+            Desaparecer
+          </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+
+
+
+  <div class="container-fluid py-4">
+    <div class="container-fluid py-4">
+      <h3 class="text-center">¡¡Recupera partidos que hayas salvado!!</h3>
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">IdTorneo</th>
+          <th scope="col">IdEquipo1</th>
+          <th scope="col">IdEquipo2</th>
+          <th scope="col">GolesEquipo1</th>
+          <th scope="col">GolesEquipo2</th>
+          <th scope="col">Observacion</th>
+          <th scope="col">Recuperar</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let part of partidos">
+          <td>{{part.idTorneo}}</td>
+          <td>{{part.idEquipo1}}</td>
+          <td>{{part.idEquipo2}}</td>
+          <td>{{part.golesEquipo1}}</td>
+          <td>{{part.golesEquipo2}}</td>
+          <td>{{part.observacion}}</td>
+          <td><button (click)="submitRecupera3(part._id,part.idTorneo,part.idEquipo1, part.idEquipo2, part.golesEquipo1,
+            part.golesEquipo2,part.observacion)" class="btn btn-success btn-block">
+            Recuperar 
+          </button></td>
+          <td><button (click)="eliminaPermanente3(part._id)" class="btn btn-danger btn-block">
+            Desaparecer
+          </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>

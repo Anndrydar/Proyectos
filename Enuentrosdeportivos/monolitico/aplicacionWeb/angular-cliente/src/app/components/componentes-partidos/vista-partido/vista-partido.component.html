@@ -1,0 +1,37 @@
+<div class="container-fluid py-4">
+    <div class="card text-center">
+        <div class="card-header">
+         Partidos
+        </div>
+        <div class="card-body">
+          <a href="/crear-partido" class="btn btn-primary">Gestionarlos</a>
+        </div>
+        <div class="card-header">
+          <h5 class="card-title">Conoce todos los partidos que juegan</h5>
+        </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="row my-4 text-center">
+  <div *ngFor="let Equi of partidos"class="col-md-4 p-4">
+    <div class="card bg-light card-project">
+      <div class="container-fluid py-2">
+      <div class="card-body">
+        <h2>Torneo disputado:{{Equi.idTorneo}}</h2>
+        <p>Equipo local: {{Equi.idEquipo1}}</p>
+        <h6>VS</h6>
+        <p>Equipo visitante:{{Equi.idEquipo2}}</p>
+        <p>Goles local:{{Equi.golesEquipo1}}</p>
+        <p>Goles visitante:{{Equi.golesEquipo2}}</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

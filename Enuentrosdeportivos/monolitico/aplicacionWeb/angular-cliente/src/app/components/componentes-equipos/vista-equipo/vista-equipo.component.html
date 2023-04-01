@@ -1,0 +1,29 @@
+<div class="container-fluid py-4">
+    <div class="card text-center">
+        <div class="card-header">
+          Equipos
+        </div>
+        <div class="card-body">
+          <a href="/crear-equipo" class="btn btn-primary">Gestionarlos</a>
+        </div>
+        <div class="card-header">
+          <h5 class="card-title">Conoce todos los equipos que juegan</h5>
+        </div>
+      </div>
+</div>
+
+
+
+<div class="row my-4 text-center">
+  <div *ngFor="let Equi of equipos"class="col-md-4 p-4">
+    <div class="card bg-light card-project">
+      <div class="container-fluid py-2">
+      <div class="card-body">
+        <h2>{{Equi.nombre}}</h2>
+        <p>Es un {{Equi.descripcion}}</p>
+        <p>Que juega en la serie {{Equi.serie}} de su pais</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
