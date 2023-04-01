@@ -17,26 +17,7 @@ router.get('/partidos',(req,res)=>{
     .catch((error) => res.json({message: error}));
     })
 
-    //Buscar partido
-router.get('/partidos/:id',(req,res)=>{
-    const {id} = req.params;
-    partidoSchema.findById(id)
-    .then((data)=> res.json(data))
-    .catch((error) => res.json({message: error}));
-    })
 
-
-        //Actualizar partido
-router.put('/partidos/:id',(req,res)=>{
-    const {id} = req.params;
-    const {idTorneo, idEquipo1, idEquipo2,
-        golesEquipo1, golesEquipo2, 
-        observacion} = req.body;
-    partidoSchema.updateOne({_id: id},{$set:{idTorneo,
-    idEquipo1,idEquipo2,golesEquipo1,golesEquipo2,observacion}})
-    .then((data)=> res.json(data))
-    .catch((error) => res.json({message: error}));
-    })
 
     //Eliminar partido
      router.delete('/partidos/:id',(req,res)=>{
